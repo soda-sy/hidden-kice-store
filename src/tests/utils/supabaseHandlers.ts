@@ -53,7 +53,6 @@ export function productsHandler(rows: ProductRowFixture[] = productRows) {
 
     const pageRows = matchedRows.slice(offset, offset + limit).map((row) => ({
       id: row.id,
-      slug: row.slug,
       name: row.name,
       thumbnail_url: row.thumbnail_url,
       original_price: row.original_price,

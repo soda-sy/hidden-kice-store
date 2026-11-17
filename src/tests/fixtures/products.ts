@@ -1,6 +1,5 @@
 export type ProductRowFixture = {
   id: string;
-  slug: string;
   name: string;
   thumbnail_url: string | null;
   original_price: number;
@@ -22,7 +21,6 @@ export const productRows: ProductRowFixture[] = Array.from({ length: 14 }, (_, i
   const order = index + 1;
   return {
     id: `00000000-0000-0000-0000-${String(order).padStart(12, "0")}`,
-    slug: `product-${order}`,
     name: isPass ? `시즌${order} 국어 패스` : `시즌${order} 수학`,
     thumbnail_url: "/images/products/product-hidden-kice.png",
     original_price: isPass ? 76000 : 40000,

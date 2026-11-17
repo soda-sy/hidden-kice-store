@@ -4,7 +4,7 @@ import { calculateDiscountRate } from "../lib/price";
 import type { Product, ProductCategory, ProductListParams, ProductPage } from "../types/product";
 
 const PRODUCT_LIST_COLUMNS =
-  "id, slug, name, thumbnail_url, original_price, sale_price, category:categories!inner(code, name)";
+  "id, name, thumbnail_url, original_price, sale_price, category:categories!inner(code, name)";
 
 const RANGE_NOT_SATISFIABLE = "PGRST103";
 
@@ -45,7 +45,6 @@ export async function fetchProducts(
   return {
     products: data.map((row) => ({
       id: row.id,
-      slug: row.slug,
       name: row.name,
       category: row.category,
       thumbnailUrl: row.thumbnail_url,

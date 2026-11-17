@@ -16,7 +16,6 @@ describe("fetchProducts", () => {
     expect(result.products).toHaveLength(12);
     expect(result.products[0]).toEqual({
       id: "00000000-0000-0000-0000-000000000001",
-      slug: "product-1",
       name: "시즌1 국어 패스",
       category: { code: "pass", name: "패스" },
       thumbnailUrl: "/images/products/product-hidden-kice.png",
@@ -26,6 +25,9 @@ describe("fetchProducts", () => {
     });
 
     const params = productRequests[0].searchParams;
+    expect(params.get("select")?.replaceAll(" ", "")).toBe(
+      "id,name,thumbnail_url,original_price,sale_price,category:categories!inner(code,name)",
+    );
     expect(params.get("is_active")).toBe("eq.true");
     expect(params.get("order")).toBe("display_order.asc,id.asc");
     expect(params.get("offset")).toBe("0");
@@ -38,7 +40,7 @@ describe("fetchProducts", () => {
     const result = await fetchProducts({ keyword: "", categoryCode: null, page: 2 }, signal);
 
     expect(productRequests[0].searchParams.get("offset")).toBe("12");
-    expect(result.products.map((product) => product.slug)).toEqual(["product-13", "product-14"]);
+    expect(result.products.map((product) => product.name)).toEqual(["시즌13 국어 패스", "시즌14 수학"]);
   });
 
   it("카테고리 코드와 검색어를 조회 조건으로 보낸다", async () => {

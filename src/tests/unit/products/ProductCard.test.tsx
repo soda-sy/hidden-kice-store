@@ -8,7 +8,6 @@ import { renderWithProviders as render } from "@/tests/utils/renderWithProviders
 function createProduct(overrides: Partial<Product> = {}): Product {
   return {
     id: "product-1",
-    slug: "hidden-kice-s7-korean-pass",
     name: "2026 Hidden Kice 시즌7 국어 패스",
     category: { code: "pass", name: "패스" },
     thumbnailUrl: "/images/products/product-pass-set.png",

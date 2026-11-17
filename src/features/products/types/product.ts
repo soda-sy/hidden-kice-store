@@ -5,7 +5,6 @@ export type ProductCategory = {
 
 export type Product = {
   id: string;
-  slug: string;
   name: string;
   category: ProductCategory;
   thumbnailUrl: string | null;
