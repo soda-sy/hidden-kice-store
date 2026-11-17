@@ -3,7 +3,7 @@ import Image from "next/image";
 const PROMO_BANNERS = [
   {
     id: "hidden-kice-2026-season7",
-    imageSrc: "/images/banners/promo-banner.png",
+    imageSrc: "/images/banners/promo-banner.webp",
     alt: "히든카이스 - 모두가 푸는 건 이유가 있습니다. 상위권이 선택한 문제집, 결과로 증명된 실전 대비서",
   },
 ];
