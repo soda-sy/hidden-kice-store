@@ -5,11 +5,10 @@ import { Providers } from "./providers";
 
 const pretendard = localFont({
   src: [
-    { path: "./fonts/Pretendard-Medium.subset.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/Pretendard-SemiBold.subset.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/Pretendard-Medium.subset.woff2", weight: "500" },
+    { path: "./fonts/Pretendard-SemiBold.subset.woff2", weight: "600" },
   ],
   variable: "--font-pretendard",
-  display: "swap",
 });
 
 export const metadata: Metadata = {

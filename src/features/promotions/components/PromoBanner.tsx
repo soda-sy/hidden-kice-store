@@ -18,7 +18,7 @@ export function PromoBanner() {
           src={currentBanner.imageSrc}
           alt={currentBanner.alt}
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover"
         />

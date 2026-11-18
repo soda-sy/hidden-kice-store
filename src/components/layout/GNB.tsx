@@ -23,7 +23,7 @@ export function GNB() {
             aria-label="히든카이스 스토어 홈"
             className="flex h-12 items-center transition-opacity duration-200 hover:opacity-80 md:h-auto"
           >
-            <Image src="/logo.svg" alt="HIDDEN KICE" width={143} height={17} priority />
+            <Image src="/logo.svg" alt="HIDDEN KICE" width={143} height={17} loading="eager" />
           </Link>
           <nav aria-label="주요 메뉴" className="order-last w-full overflow-x-auto md:order-none md:w-auto md:overflow-visible">
             <ul className="flex gap-6 whitespace-nowrap lg:gap-8">
