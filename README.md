@@ -78,7 +78,7 @@ http://localhost:3000 에 접속하면 `/store`로 이동합니다.
 | `pnpm build` | 프로덕션 빌드 |
 | `pnpm start` | 빌드 결과 실행 |
 | `pnpm lint` | ESLint 검사 |
-| `pnpm typecheck` | TypeScript 타입 검사 |
+| `pnpm typecheck` | 라우트 타입 생성 후 TypeScript 타입 검사 |
 | `pnpm test` | 테스트 1회 실행 |
 | `pnpm test:watch` | 테스트 감시 모드 |
 
@@ -88,12 +88,17 @@ http://localhost:3000 에 접속하면 `/store`로 이동합니다.
 
 1. Vercel에서 이 저장소를 Import 합니다. 프레임워크는 Next.js로 자동 인식됩니다.
 2. Project Settings > Environment Variables에 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`를 등록합니다.
-3. Deploy를 누르면 `main` 브랜치에 push할 때마다 자동으로 배포됩니다.
+3. Deploy를 누르면 `main` 브랜치에 push할 때마다 자동으로 배포됩니다. Pull Request에는 미리보기 배포가 만들어집니다.
+
+## CI (GitHub Actions)
+
+`main` push와 Pull Request마다 `.github/workflows/ci.yml`이 lint, typecheck, test, build를 순서대로 실행합니다. 빌드 확인에는 실제 키 대신 자리표시자 환경 변수를 씁니다.
 
 ## 디렉터리 구조
 
 ```text
 hidden-kice-store/
+├── .github/workflows/ci.yml           lint, typecheck, test, build 자동 검사
 ├── public/
 │   ├── icons/                          GNB, 검색, 페이지네이션 아이콘(SVG)
 │   ├── images/
